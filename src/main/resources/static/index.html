@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Management</title>
+    <script src="app.js"></script>
+</head>
+<body>
+
+<h2>Vehicle List</h2>
+<table id="vehicleTable">
+    <thead>
+    <tr>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Trailer</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Авто будут добавлены здесь -->
+    </tbody>
+</table>
+
+<h1>Vehicle Management System</h1>
+
+<h2>Add New Vehicle</h2>
+<form id="vehicleForm">
+    Brand: <input type="text" id="brand"><br>
+    Model: <input type="text" id="model"><br>
+    Year of Manufacture: <input type="number" id="year"><br>
+    Has Trailer: <input type="checkbox" id="trailer"><br>
+    <button type="button" onclick="addVehicle()">Add Vehicle</button>
+</form>
+
+<div id="editForm" style="display:none;">
+    <h2>Edit Vehicle</h2>
+    <form>
+        Brand: <input type="text" id="editBrand"><br>
+        Model: <input type="text" id="editModel"><br>
+        Year of Manufacture: <input type="number" id="editYear"><br>
+        Has Trailer: <input type="checkbox" id="editTrailer"><br>
+        <input type="hidden" id="editId">
+        <button type="button" onclick="submitEdit()">Submit Changes</button>
+        <button type="button" onclick="toggleEditForm()">Cancel</button>
+    </form>
+</div>
+
+<script>
+    function toggleEditForm() {
+        const form = document.getElementById('editForm');
+        form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    }
+</script>
+</body>
+</html>
